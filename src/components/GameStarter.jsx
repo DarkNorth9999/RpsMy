@@ -2,7 +2,8 @@ import React from "react"
 import { useState } from "react"
 import WelcomeScreen from "./WelcomeScreen"
 import GameSequence from "./GameSequence"
-import Info from "./Info"
+import InfoIcon from "./InfoIcon"
+import InformationCard from "./InformationCard"
 
 export default function Home() {
   const [gameSequence, setGameSequence] = useState()
@@ -24,18 +25,40 @@ export default function Home() {
       <header id="headContent">
         <h1>Rock Paper Scissors Game</h1>
         <div>
-          {/* <Info setShowImage={setShowImage} isSelected={showImage}></Info> */}
+          {showImage && <InformationCard></InformationCard>}
+          <InfoIcon
+            isSelected={showImage}
+            showImage={() => selectImage()}
+          ></InfoIcon>
         </div>
       </header>
       {!gameSequence ? (
         <div>
-          <WelcomeScreen startGame={startGame} />
-          <input
-            className="input"
-            type="text"
-            value={userNameS}
-            onChange={(e) => setUserNameS(e.target.value)}
-          ></input>
+          {/* Welcome Screen */}
+          <div className="centered-div">
+            <div id="rps-logoDiv">
+              <img
+                id="rps-logo"
+                src="RPSLogo.png"
+                alt="Rock Paper Scissors Logo Here"
+              ></img>
+            </div>
+          </div>
+          <br />
+          <div className="centered-div">
+            <div>
+              <h3>
+                <pre>Enter your Name: </pre>
+              </h3>
+            </div>
+            <input
+              className="input"
+              type="text"
+              value={userNameS}
+              onChange={(e) => setUserNameS(e.target.value)}
+            ></input>
+          </div>
+          <WelcomeScreen startGame={() => startGame()} />
         </div>
       ) : (
         <GameSequence userName={userNameS} setUserName={setUserNameS} />

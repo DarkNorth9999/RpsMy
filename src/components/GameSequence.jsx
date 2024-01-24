@@ -39,15 +39,19 @@ export default function GameSequence({ userName, setUserName }) {
   const [userScore, setUserScore] = useState(0)
   const [computerScore, setComputerScore] = useState(0)
   const [scoreCard, setScoreCard] = useState(false)
+
   const [userScoreList, setUserScoreList] = useState([])
   const [computerScoreList, setComputerScoreList] = useState([])
   const [winnerList, setWinnerList] = useState([])
+
   const [itrV, setItr] = useState(round)
   const [powerUpMessage, setPowerUpMessage] = useState("")
   const [hideScores, setHideScores] = useState(true)
+
   const [selectRock, setSelectRock] = useState(false)
   const [selectPaper, setSelectPaper] = useState(false)
   const [selectScissors, setSelectScissors] = useState(false)
+
   const [powerChecker, setPowerChecker] = useState(0)
   const [lockPwShield, setLockPwShied] = useState(false)
   const [lockPwEleBoost, setLockPwEleBoost] = useState(false)
@@ -55,14 +59,19 @@ export default function GameSequence({ userName, setUserName }) {
   const [lockPwPrediction, setLockPwPrediction] = useState(false)
   const [lockPwEleDP, setLockPwDP] = useState(false)
   const [powerSelected, setPowerSelected] = useState(false)
+  const [togglePmVisibility, setTogglePmVisibility] = useState(false)
+  const [togglePEffectsVisibility, setTogglePEffectsVisibility] =
+    useState(false)
+  const [shieldEffect, setShieldEffect] = useState(false)
 
   const [nextMoveVal, setNextMoveVal] = useState(0)
   const [lastComputerChoice, setLastComputerChoice] = useState(0)
 
-  //let nextMoveVal = 0
   let lastUsedPowerUp = 0
+  let powerUpFirstMessage = ""
 
   useEffect(() => {
+    powerUpFirstMessage = "You Got a Power Up! Your Power: "
     console.log("PowerUp state updated: ", powerUp)
     if (powerUp === 3) {
       lastUsedPowerUp = 3
@@ -72,7 +81,11 @@ export default function GameSequence({ userName, setUserName }) {
       console.log(temp)
       setNextMoveVal(temp)
       //setNextMoveVal(nextMoveVal)
-      setPowerUpMessage("Next Move is:" + move[temp])
+      setPowerUpMessage("Next Move is: " + move[temp])
+    }
+    if (powerUp === 4) {
+      lastUsedPowerUp = 4
+      setShieldEffect(true)
     }
     if (powerUp === 5) {
       swapPowerFunction()
@@ -90,6 +103,10 @@ export default function GameSequence({ userName, setUserName }) {
       setWinnerList((arr) => [...arr, tieMessage])
     }
   }, [computerScore, userScore])
+
+  useEffect(() => {
+    powerUpFirstMessage = ""
+  }, [userChoiceString])
 
   function lockingAllPowers() {
     setLockPwShied(true)
@@ -114,9 +131,10 @@ export default function GameSequence({ userName, setUserName }) {
 
   const computerVictory = () => {
     setWinner(2)
-    if (powerUp === 4) {
-      lastUsedPowerUp = 4
-      setPowerUpMessage("Shield Activated! Computer -1")
+    if (shieldEffect === true) {
+      setPowerUpMessage("Shield Activated! Round Effects Nullified!")
+      setTogglePEffectsVisibility(false)
+      setShieldEffect(false)
     } else {
       setComputerScore((computerScore) => computerScore + 1)
     }
@@ -195,6 +213,10 @@ export default function GameSequence({ userName, setUserName }) {
   }
 
   function gameSequence(userChoice) {
+    setTogglePmVisibility(false)
+    if (togglePEffectsVisibility == false) {
+      setPowerUpMessage("")
+    }
     buttonClicks++
     showScores()
 
@@ -256,6 +278,8 @@ export default function GameSequence({ userName, setUserName }) {
     } else if (winner === 2) {
       setComputerScore((computerScore) => computerScore - 1)
     }
+
+    //setRound((round) => round - 1)
   }
 
   const toggleScoreCard = () => {
@@ -310,6 +334,7 @@ export default function GameSequence({ userName, setUserName }) {
     if (booleanPower === false) return
 
     setPowerUp(powerNum)
+    setTogglePmVisibility(true)
   }
 
   function checkPowerStatus(powerNum) {
@@ -499,14 +524,25 @@ export default function GameSequence({ userName, setUserName }) {
                 </div>
               )}
             </div>
-            <div>{<PickWinnerx winner={winner} />}</div>
+            <div>{<PickWinnerx userNameW={userName} winner={winner} />}</div>
             <div id="powerUp">
-              {{ powerSelected } && (
-                <div>
-                  You Got a Power Up! Your Power: {powerUpOptions[powerUp]}
-                </div>
-              )}
-              {powerUpMessage.length > 0 && <div>{powerUpMessage}</div>}
+              <h3>
+                {togglePmVisibility === true && (
+                  <div>
+                    You Got a Power Up! Your Power:{" "}
+                    <h3 className="inlineHead">{powerUpOptions[powerUp]}</h3>
+                    <br />
+                  </div>
+                )}
+                {powerUpMessage.length > 0 && (
+                  <div>
+                    <div>
+                      {/* X power is active */}
+                      <h3 className="inlineHeadOrange">{powerUpMessage}</h3>
+                    </div>
+                  </div>
+                )}
+              </h3>
             </div>
           </div>
         </section>
