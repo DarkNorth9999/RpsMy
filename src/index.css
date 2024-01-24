@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.5;
+
+  color: #ebe7ef;
+  background: radial-gradient(#280a48, #20043d);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  min-height: 80rem;
+}
+
+main {
+  width: 50%;
+  max-width: 50rem;
+  margin: auto;
+}
+
+#headContent {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+
+
+#scoreCard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#headContent h1 {
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 3rem;
+  background: linear-gradient(40deg, #ea00ff, #ea00ff, #03d5ff, #03d5ff);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
+
+#headContent p {
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.25rem;
+  color: #8964b0;
+}
+
+
+#result {
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  background-color: #140524;
+  /* margin-bottom: 10%; */
+}
+
+#rps-logo{
+  height: 6rem;
+  width: 6rem;
+  object-fit: cover;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+#scores{
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  background-color: #140524;
+}
+
+#gameChoices {
+  /* margin: 3rem auto; */
+}
+
+#gameChoices h2 {
+  text-align: center;
+}
+
+#gameChoices menu {
+  gap: 0.5rem;
+  list-style: none;
+  justify-content: center;
+  margin: 1rem 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+#gameChoices menu button {
+  padding: 0.5rem 1rem;
+  color: #a18aba;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+#gameChoices menu button:hover {
+  color: #ebe7ef;
+  background-color: #1b082f;
+}
+
+#gameChoices menu button.active {
+  background-color: #7925d3;
+  color: #ebe7ef;
+}
+
+/* #gameChoicesImg {
+  margin: 3rem auto;
+} */
+
+#gameChoicesImg h2 {
+  text-align: center;
+}
+
+#gameChoicesImg menu {
+  gap: 0.5rem;
+  list-style: none;
+  justify-content: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+#gameChoicesImg menu button {
+  padding: 0.5rem 1rem;
+  color: #a18aba;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+#gameChoicesImg menu button:hover {
+  color: #ebe7ef;
+  background-color: #1b082f;
+}
+
+#gameChoicesImg menu button.active {
+  background-color: #7925d3;
+  color: #ebe7ef;
+}
+
+.inlineHead{
+  display: inline;
+  color: greenyellow;
+}
+
+.inBlockElement{
+  display: inline-block;
+}
+
+
+table {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #140524;
+  color: #fff; 
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #371e4a; 
+  width: 25%;
+}
+
+th {
+  background-color: #371e4a; 
+}
+
+tr{
+  display: block;
+}
+
+tr:hover {
+  background-color: #1f0f26;
+}
+
+#centeredTable{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rounds{
+  width: 20%;
+}
+
+.scoreTable{
+  width:30%;
+}
+
+.Winners{
+  width: 30%;
+}
+
+#powerImg{
+  height:100px;
+  width:100px;
+  display: inline;
+}
+
+#powerImgGray{
+  height:100px;
+  width:100px;
+  display: inline;
+  filter: grayscale();
+}
+
+#powerS{
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  background-color: #140524;
+  width: 100%;
+  max-width: 50rem;
+  margin: auto;
+
+  
+}
+
+#rpsChoice{
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+#scoreCard{
+  margin: 3rem auto;
+}
+
+#info-icon{
+  height:100px;
+  width:100px;
+  display: inline;
+  position: absolute;
+  top:10px;
+  right:30px;
+}
