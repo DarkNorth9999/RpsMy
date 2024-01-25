@@ -1,0 +1,157 @@
+.roundWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color:white;
+    font-size: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.gameWrapper{
+    display: flex;
+}
+
+.userWrapper{
+    display: flex;
+    flex-direction: column;
+    background-color: 	#B0B0B0;
+    align-items:center;
+    justify-content:space-between;
+    width: 60%;
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 20px;
+}
+
+.score{
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 100px;
+    width: 110px;
+    height: 110px;
+    margin-bottom: 10px;
+}
+
+.score-right{
+    background-color: #B0B0B0;
+}
+
+.computerWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width: 50%;
+    padding: 20px;
+}
+
+.userOptions{
+    display: flex;
+    justify-content: space-between;
+}
+.optionStyle{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color:white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* .computerOptions{
+    display: flex;
+    justify-content: space-between;
+} */
+
+.singleUserOption{
+    margin-left:25px;
+    margin-right:25px;
+}
+.choiceStateOption{
+    display: flex;
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.left-option{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    width: 60%;
+}
+
+.bottom{
+    background-color: blueviolet;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-size: 40px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.history-button{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 20px;
+    background-color: #D8D8D8;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+.exit-button{
+    position: absolute;
+    top: 20px;
+    right: 150px;
+    font-size: 20px;
+    background-color: #D8D8D8;
+    border-color: red;
+    border-width: 2px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+.i-button{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+    top: 20px;
+    right: 380px;
+    font-size: 20px;
+    background-color: #D8D8D8;
+    border-color: red;
+    border-width: 2px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+
+.demo{
+    background-color: aqua;
+    height: 20px;
+    width: 20px;
+}
+

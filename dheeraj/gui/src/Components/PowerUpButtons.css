@@ -1,0 +1,53 @@
+.buttonWrapper{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.singlePowerUpButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    height: 30px;
+    width: 30px;
+    border-radius: 100px;
+    padding: 20px;
+    border: 5px solid pink;
+    box-shadow: 0 0 2px darkslategray;
+    margin-right: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.x2{
+    display: flex;
+    justify-content: space-around;
+    /* width: 20px; */
+    align-items: center;
+    font-size: 40px;
+}
+
+
+.dot{
+    position: absolute;
+    top:0;
+    right: -12px;
+    font-size: 15px;
+    background-color: red;
+    border-radius: 20px;
+    padding: 5px;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color:white
+}
+
+.singlePowerUpButtonBlur{
+    filter:blur(4px)
+}

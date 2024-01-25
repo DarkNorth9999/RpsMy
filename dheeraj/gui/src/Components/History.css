@@ -1,0 +1,61 @@
+.history-container{
+    background-color:#E0E0E0;
+   position: absolute;
+   height: 100%;
+   width: 40%;
+   top:0;
+   bottom: 0;
+   overflow-y: scroll;
+   z-index: 500;
+}
+
+.singleHistoryWrapper{
+    display: flex;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 30px;
+
+}
+.singleHistoryIndex{
+    margin-right: 10px;
+}
+
+.historyTitle{
+    font-size: 50px;
+    padding:10px;
+}
+
+.historyScoreContainer{
+    display: flex;
+    background-color: black;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 10px;
+    margin-right:10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+
+}
+
+.historyScoreContainerLeft{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.yourScore{
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+   
+}
+
+.yourScoreNumber{
+    font-size: 50px;
+    font-weight: 900;
+    color: white;
+}
