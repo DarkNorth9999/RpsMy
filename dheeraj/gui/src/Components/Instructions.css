@@ -19,3 +19,54 @@
     padding: 10px;
     font-weight: 600;
 }
+
+.instruction-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+@media screen and (max-width : 1024px) {
+    .instructions-container{
+        background-color:#E0E0E0;
+        position: absolute;
+        height: 100%;
+        width: 40%;
+        right:0;
+        top:0;
+        bottom: 0;
+        overflow-y: scroll;
+        z-index: 500;
+    }
+}
+
+@media screen and (max-width : 800px) {
+    .instructions-container{
+        background-color:#E0E0E0;
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        right:0;
+        top:0;
+        bottom: 0;
+        overflow-y: scroll;
+        z-index: 500;
+    }
+}
+
+
+@media screen and (max-width : 600px) {
+    .instructions-container{
+        background-color:#E0E0E0;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        right:0;
+        top:0;
+        bottom: 0;
+        overflow-y: scroll;
+        z-index: 500;
+    }
+}

@@ -3,43 +3,49 @@ import './Instructions.css'
 import { IoShield } from "react-icons/io5";
 import { FaFireAlt, FaQuestion } from "react-icons/fa";
 import { MdOutlineSwapCalls } from "react-icons/md";
+import { RxCross1 } from "react-icons/rx";
 
-function Instuctions() {
+function Instuctions({setIbutton}) {
   return (
     <div className='instructions-container'>
-      <div className='instructions-title'> Power Ups</div>
+      <div className='instruction-head'>
+        <div className='instructions-title'> Power Ups</div>
+        <div onClick={() => setIbutton(false)}>
+          <div><RxCross1 size={40}  /> </div>
+        </div>
+      </div>
 
-        <div style={{display:'flex', justifyContent:'center', alignItems:'center', padding:10}}>
+        <div style={{display:'flex', alignItems:'center', padding:10}}>
           <div className='singlePowerUpButton' style={{borderColor:"#30b84d"}}>
                 <div className='x2 '>
                     <div style={{color:"#30b84d" }}>x2</div> 
                 </div>
           </div>
-          <div>Double Points : Doubles the points in next win</div>
+          <div> <span style={{color:"#30b84d", fontWeight:600}}> Double Points </span> : Doubles the points in next win</div>
         </div>
 
 
-        <div style={{display:'flex', justifyContent:'center', alignItems:'center', padding:10}}>
+        <div style={{display:'flex',  alignItems:'center', padding:10}}>
             <div className='singlePowerUpButton'style={{borderColor:"#FFC300"}}>
                     <div >
                      <IoShield color='#FFC300' />
                     </div>
                 </div>
-           <div>Shield : Negates the effect of the next loss</div>
+           <div> <span style={{color:"#FFC300", fontWeight:600}}> Shield </span> : Negates the effect of the next loss</div>
         </div>
 
 
-        <div style={{display:'flex', justifyContent:'center', alignItems:'center', padding:10}}>
+        <div style={{display:'flex', alignItems:'center', padding:10}}>
             <div className='singlePowerUpButton' 
-                    style={{borderColor:"orange"}}>
+                    style={{borderColor:"#FF8C00"}}>
                     <div>
-                        <FaFireAlt color='orange' />
+                        <FaFireAlt color='#FF8C00' />
                     </div>
             </div>
-          <div>Element boost: Temporarily strengthens a chosen element, making it win against one additional element.</div>
+          <div> <span style={{color:"#FF8C00", fontWeight:600}}>Element boost </span> : Temporarily strengthens a chosen element, making it win against one additional element.</div>
         </div>
 
-        <div style={{display:'flex', justifyContent:'center', alignItems:'center', padding:10}}>
+        <div style={{display:'flex', alignItems:'center', padding:10}}>
             <div className='singlePowerUpButton'
                style={{borderColor:"#8e3fbf"}}
             >
@@ -47,10 +53,10 @@ function Instuctions() {
                 <FaQuestion color={'#8e3fbf'}/>
                 </div>
             </div>
-          <div>Predicton : Reveals the computer's next choice.</div>
+          <div> <span style={{color:"#8e3fbf", fontWeight:600}}> Predicton </span> : Reveals the computer's next choice.</div>
         </div>
 
-        <div style={{display:'flex', justifyContent:'center', alignItems:'center', padding:10}}>
+        <div style={{display:'flex', alignItems:'center', padding:10}}>
             <div className='singlePowerUpButton'
                 style={{borderColor:"#3458eb"}}
             >
@@ -58,8 +64,10 @@ function Instuctions() {
                     <MdOutlineSwapCalls color='#3458eb' />
                 </div>
             </div>    
-          <div>Element Swap : Allows changing the chosen element after revealing the computer’s choice.</div>
+          <div> <span style={{color:"#3458eb", fontWeight:600}}> Element Swap</span> : Allows changing the chosen element after revealing the computer’s choice.</div>
         </div>
+
+      
 
       <div>
         <div className='instructions-title'>Rules</div>

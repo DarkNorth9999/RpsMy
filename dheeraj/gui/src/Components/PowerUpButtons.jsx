@@ -95,17 +95,17 @@ function PowerUpButtons({round,doublePoints, setDoublePoints,shield, setShield, 
                 (elementBoost.active) 
                 ?
                 <div className='singlePowerUpButton singlePowerUpButtonBlur' 
-                    style={{borderColor:"orange"}}>
+                    style={{borderColor:"#FF8C00"}}>
                     <div>
-                        <FaFireAlt color='orange' />
+                        <FaFireAlt color='#FF8C00' />
                     </div>
                 </div>
                 :
 
                 (elementBoost.noOfElementBoost > 0) && 
-                <div className='singlePowerUpButton' style={{borderColor:"orange"}}>
+                <div className='singlePowerUpButton' style={{borderColor:"#FF8C00"}}>
                     <div onClick={handleElementBoostTouch}>
-                        <FaFireAlt color='orange' />
+                        <FaFireAlt color='#FF8C00' />
                     </div>
                     <div className='dot'>{elementBoost.noOfElementBoost}</div>
                 </div>

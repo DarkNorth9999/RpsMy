@@ -33,11 +33,11 @@ function Game({name, setIsGameOn}) {
     const [iButton, setIbutton] = useState(false);
 
     // POWER UPS
-    const [doublePoints, setDoublePoints] = useState({active:false , noOfDoublePoints:1});
-    const [shield , setShield] = useState({active:false , noOfShield:1});
-    const [elementBoost, setElementBoost] = useState({active:false, noOfElementBoost:1});
-    const [predicted, setPredicted] = useState({active:null, noOfPredicted:1});
-    const [swap, setSwap] = useState({active:null, noOfSwaps:2});
+    const [doublePoints, setDoublePoints] = useState({active:false , noOfDoublePoints:0});
+    const [shield , setShield] = useState({active:false , noOfShield:0});
+    const [elementBoost, setElementBoost] = useState({active:false, noOfElementBoost:0});
+    const [predicted, setPredicted] = useState({active:null, noOfPredicted:0});
+    const [swap, setSwap] = useState({active:null, noOfSwaps:0});
    
    
 
@@ -129,7 +129,7 @@ function Game({name, setIsGameOn}) {
         }
 
         setHistoryArray((arr) => arr.slice(0,-1));
-    setPredicted({...predicted, active: computerInputCode});
+        setPredicted({...predicted, active: computerInputCode});
     }
 
     
@@ -147,7 +147,7 @@ function Game({name, setIsGameOn}) {
 
         setRound((round) => round+1);
         let computerInputCode = Math.floor(Math.random() * 3);
-        if(predicted.active != null){ // null for a reason
+        if(predicted.active != null){ 
             computerInputCode = predicted.active;
             setPredicted({...predicted, active:null});
         }
@@ -297,18 +297,14 @@ function Game({name, setIsGameOn}) {
             <div className='roundWrapper'>Round : {round}</div>
 
 
-            <div className='i-button' onClick={() => setIbutton((iButton) => !iButton)}>
-                <div >
-                    {
-                        (iButton) ? <div> <RxCross1/> </div> :  <div> i </div>
-                    }
-                </div>
+            <div className='i-button' onClick={() => setIbutton(true)}>
+                <div>i</div>
             </div>
 
             {
                 (iButton)
                 &&
-                <Instructions/>
+                <Instructions setIbutton={setIbutton} />
             }
 
             <div className='exit-button' onClick={() => setIsExitActivated((isExitActivated ) => !isExitActivated)}>
@@ -358,19 +354,19 @@ function Game({name, setIsGameOn}) {
                     <div className='score'>{userScore}</div>
                     <div className='userOptions'>
                         <div className='singleUserOption' onClick={() => start(0)}>
-                            <img src={rock} height={150} width={150} />
+                            <img className='imageOnPhone' src={rock} height={150} width={150} />
                             <div className='optionStyle'>
                                 <div>{rpsInfo[0]}</div>
                             </div>
                         </div>
                         <div className='singleUserOption' onClick={() => start(1)}>
-                            <img src={paper} height={150} width={130} />
+                            <img className='imageOnPhone' src={paper} height={150} width={130} />
                             <div className='optionStyle'>
                                 <div>{rpsInfo[1]}</div>
                             </div>
                         </div>
                         <div className='singleUserOption' onClick={() => start(2)}>
-                            <img src={scissor} height={150} width={120} />
+                            <img className='imageOnPhone' src={scissor} height={150} width={120} />
                             <div className='optionStyle'>
                                 <div>{rpsInfo[2]}</div>
                             </div>

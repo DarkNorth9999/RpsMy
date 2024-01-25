@@ -1,9 +1,0 @@
-.toastWrapper{
-    position: absolute;
-    top:0;
-    right: 0;
-    background-color: aqua;
-    padding: 10px;
-    z-index: 100;
-    border-radius: 10px;
-}

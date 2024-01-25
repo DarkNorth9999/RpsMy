@@ -6,9 +6,9 @@ import scissor from '../Images/scissor.png'
 function ComputerChoiceImage({computerChoice}) {
 
     let choice = <div/>
-    if(computerChoice == "Rock") choice = <img src={rock} height={150} width={150} />
-    else if(computerChoice == "Paper") choice = <img src={paper} height={150} width={130} />
-    else if(computerChoice == "Scissor") choice = <img src={scissor} height={150} width={120} />
+    if(computerChoice == "Rock") choice = <img className='imageOnPhone' src={rock} height={150} width={150} />
+    else if(computerChoice == "Paper") choice = <img className='imageOnPhone' src={paper} height={150} width={130} />
+    else if(computerChoice == "Scissor") choice = <img className='imageOnPhone' src={scissor} height={150} width={120} />
     
 
   return (
